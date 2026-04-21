@@ -1,0 +1,21 @@
+/*!
+ * This file contains stuff for editor part
+ *
+ * @package Olenka Theme Starter Kit
+ * @author Maksym Marko <markomaksym@gmail.com>
+ *
+ * @link https://markomaksym.com.ua/
+ !*/
+
+.olenka-fake-div {
+    background-color: transparent;
+}
+
+/*
+ * Animated Box.
+ */
+.wp-block-olenka-animated-box>.block-editor-inner-blocks,
+.wp-block-olenka-animated-box>.block-editor-inner-blocks>.block-editor-block-list__layout,
+.wp-block-olenka-animated-box>.block-editor-inner-blocks>.block-editor-block-list__layout>div {
+    height: 100%;
+}

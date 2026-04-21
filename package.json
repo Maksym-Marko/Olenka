@@ -1,0 +1,23 @@
+{
+	"name": "olenka-theme",
+	"version": "0.1.0",
+	"description": "Create custom Gutenberg Blocks",
+	"author": "Maksym Marko",
+	"license": "GPL-2.0-or-later",
+	"scripts": {		
+		"packages-update": "wp-scripts packages-update",
+		"build": "wp-scripts build --webpack-src-dir=blocks-generator/ --output-path=custom-blocks/",
+		"start-wp": "wp-scripts start --webpack-src-dir=blocks-generator/ --output-path=custom-blocks/",
+		"vite-build": "vite build --watch"
+	},
+	"devDependencies": {
+		"@wordpress/scripts": "^26.12.0",
+		"vite": "^5.1.0"
+	},
+	"dependencies": {
+		"@studio-freight/lenis": "^1.0.34",
+		"gsap": "^3.12.5",
+		"owl.carousel": "^2.3.4",
+		"uglify-js": "^3.17.4"
+	}
+}

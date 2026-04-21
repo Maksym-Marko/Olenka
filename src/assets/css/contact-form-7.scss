@@ -1,0 +1,291 @@
+// Contact Form elements
+// Using design tokens from theme.json
+
+// Design tokens
+$color-bright: var(--wp--preset--color--bright);
+$color-main-dark: var(--wp--preset--color--main-dark);
+$color-main-light: var(--wp--preset--color--main-light);
+$color-main: var(--wp--preset--color--main);
+$color-dark: var(--wp--preset--color--dark);
+$color-light: var(--wp--preset--color--light);
+
+$font-size-mini: var(--wp--preset--font-size--mini);
+$font-size-xxx-small: var(--wp--preset--font-size--xxx-small);
+$font-size-xx-small: var(--wp--preset--font-size--xx-small);
+$font-size-x-small: var(--wp--preset--font-size--x-small);
+$font-size-small: var(--wp--preset--font-size--small);
+$font-size-medium: var(--wp--preset--font-size--medium);
+$font-size-large: var(--wp--preset--font-size--large);
+$font-size-x-large: var(--wp--preset--font-size--x-large);
+$font-size-xx-large: var(--wp--preset--font-size--xx-large);
+$font-size-xxx-large: var(--wp--preset--font-size--xxx-large);
+$font-size-huge: var(--wp--preset--font-size--huge);
+
+$spacing-mini: var(--wp--preset--spacing--mini);
+$spacing-small: var(--wp--preset--spacing--small);
+$spacing-medium: var(--wp--preset--spacing--medium);
+$spacing-large: var(--wp--preset--spacing--large);
+$spacing-x-large: var(--wp--preset--spacing--x-large);
+$spacing-xx-large: var(--wp--preset--spacing--xx-large);
+$spacing-huge: var(--wp--preset--spacing--huge);
+
+$font-family-roboto: var(--wp--preset--font-family--roboto);
+$border-radius: 6px;
+
+// Base form styles
+form {
+  font-family: $font-family-roboto;
+  font-size: $font-size-xx-small;
+  line-height: 1.5;
+  color: $color-dark;
+}
+
+// Common form element styles
+%form-element-base {
+  font-family: $font-family-roboto;
+  font-size: $font-size-xx-small;
+  line-height: 1.5;
+  color: $color-dark;
+  background-color: $color-light;
+  border: 1px solid $color-main-dark;
+  border-radius: $border-radius;
+  padding: $spacing-mini $spacing-small;
+  transition: all 0.2s ease-in-out;
+  box-sizing: border-box;
+  width: 100%;
+  
+  &:focus {
+    outline: none;
+    border-color: $color-main;
+    box-shadow: 0 0 0 2px rgba($color-main, 0.1);
+  }
+  
+  &:hover {
+    border-color: $color-main;
+  }
+  
+  &::placeholder {
+    color: rgba($color-dark, 0.3);
+  }
+}
+
+// Text inputs
+input[type="text"],
+input[type="email"],
+input[type="url"],
+input[type="tel"],
+input[type="number"],
+input[type="date"] {
+  @extend %form-element-base;
+  height: 44px;
+}
+
+// Textarea
+textarea {
+  @extend %form-element-base;
+  min-height: 120px;
+  resize: vertical;
+  font-family: $font-family-roboto;
+}
+
+// Select dropdown
+select {
+  @extend %form-element-base;
+  height: 44px;
+  cursor: pointer;
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3e%3cpath stroke='%23433abf' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='m6 8 4 4 4-4'/%3e%3c/svg%3e");
+  background-position: right $spacing-mini center;
+  background-repeat: no-repeat;
+  background-size: 16px;
+  padding-right: $spacing-medium;
+  appearance: none;
+  
+  &:focus {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3e%3cpath stroke='%234c40d4' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='m6 8 4 4 4-4'/%3e%3c/svg%3e");
+  }
+}
+
+// File input
+input[type="file"] {
+  @extend %form-element-base;
+  height: auto;
+  padding: $spacing-small;
+  cursor: pointer;
+  
+  &::-webkit-file-upload-button {
+    background-color: $color-main;
+    color: $color-light;
+    border: none;
+    border-radius: $border-radius;
+    padding: $spacing-mini $spacing-small;
+    margin-right: $spacing-small;
+    cursor: pointer;
+    font-family: $font-family-roboto;
+    font-size: $font-size-xxx-small;
+    transition: background-color 0.2s ease-in-out;
+    
+    &:hover {
+      background-color: $color-main-dark;
+    }
+  }
+}
+
+// Submit button
+input[type="submit"] {
+  background-color: $color-main;
+  color: $color-light;
+  border: 1px solid $color-main;
+  border-radius: $border-radius;
+  padding: $spacing-small $spacing-medium;
+  font-family: $font-family-roboto;
+  font-size: $font-size-xx-small;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+  min-height: 44px;
+  
+  &:hover {
+    background-color: $color-main-dark;
+    border-color: $color-main-dark;
+  }
+  
+  &:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px rgba($color-main, 0.1);
+  }
+  
+  &:active {
+    transform: translateY(1px);
+  }
+}
+
+// Checkbox and Radio styles
+input[type="checkbox"],
+input[type="radio"] {
+  appearance: none;
+  width: 18px;
+  height: 18px;
+  border: 2px solid $color-main-dark;
+  border-radius: $border-radius;
+  background-color: $color-light;
+  cursor: pointer;
+  position: relative;
+  margin-right: $spacing-mini;
+  transition: all 0.2s ease-in-out;
+  
+  &:checked {
+    background-color: $color-main;
+    border-color: $color-main;
+    
+    &::after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+  }
+  
+  &:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px rgba($color-main, 0.1);
+  }
+  
+  &:hover {
+    border-color: $color-main;
+  }
+}
+
+// Checkbox specific styles
+input[type="checkbox"] {
+  &:checked::after {
+    width: 6px;
+    height: 10px;
+    border: 2px solid $color-light;
+    border-top: none;
+    border-left: none;
+    transform: translate(-50%, -60%) rotate(45deg);
+  }
+}
+
+// Radio specific styles
+input[type="radio"] {
+  border-radius: 50%;
+  
+  &:checked::after {
+    width: 6px;
+    height: 6px;
+    background-color: $color-light;
+    border-radius: 50%;
+  }
+}
+
+// Label styles
+label {
+  font-family: $font-family-roboto;
+  font-size: $font-size-xx-small;
+  font-weight: 500;
+  color: $color-dark;
+  margin-bottom: $spacing-mini;
+  display: block;
+}
+
+// Form field wrapper
+p {
+  margin-bottom: $spacing-small;
+}
+
+// Form control wrap (Contact Form 7 specific)
+.wpcf7-form-control-wrap {
+  display: block;
+  margin-bottom: $spacing-mini;
+}
+
+// Success states
+input:valid,
+textarea:valid,
+select:valid {
+  border-color: $color-main-dark;
+  
+  &:focus {
+    border-color: $color-main-dark;
+    box-shadow: 0 0 0 2px rgba($color-main-dark, 0.1);
+  }
+}
+
+// Disabled states
+input:disabled,
+textarea:disabled,
+select:disabled {
+  background-color: $color-main-light;
+  color: rgba($color-dark, 0.4);
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+// Form layout improvements
+form {
+  max-width: 600px;
+  margin: 0 auto;
+  
+  > p {
+    margin-bottom: $spacing-small;
+  }
+}
+
+// Checkbox and radio groups
+.wpcf7-checkbox,
+.wpcf7-radio {
+  .wpcf7-list-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: $spacing-mini;
+    
+    label {
+      margin-bottom: 0;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+    }
+  }
+}

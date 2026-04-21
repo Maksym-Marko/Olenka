@@ -1,0 +1,123 @@
+/**
+ * This file contains styles for the editor and frontend
+ *
+ * @package Olenka Theme Starter Kit
+ * @author Maksym Marko <markomaksym@gmail.com>
+ *
+ * @link https://markomaksym.com.ua/
+ */
+
+/*
+* Core blocks customization.
+*/
+/* block: "core/navigation" */
+@media (max-width: 767.5px) {
+    .wp-block-navigation__responsive-container-open:not(.always-shown) {
+        display: block;
+    }
+
+    .wp-block-navigation__responsive-container .wp-block-navigation__responsive-container-content {
+        display: none;
+    }
+
+    .has-modal-open .is-menu-open .wp-block-navigation__responsive-dialog {
+        padding: var(--wp--preset--spacing--medium);
+    }
+
+    .wp-block-navigation__responsive-container-close {
+        right: var(--wp--preset--spacing--medium);
+        top: var(--wp--preset--spacing--medium);
+    }
+
+    body .wp-block-template-part .is-position-sticky {
+        top: var(--wp--preset--spacing--medium);
+    }
+
+    body.admin-bar .wp-block-template-part .is-position-sticky {
+        top: var(--wp--preset--spacing--x-large);
+    }
+
+}
+
+/* block: "core/group" */
+body .wp-block-template-part .is-position-sticky.mx-element-pre-freezed {
+    position: fixed;
+    top: -500px;
+}
+
+body .wp-block-template-part .is-position-sticky.mx-element-freezed {
+    position: fixed;
+    top: 0;
+}
+
+/*
+ * Custom blocks customization.
+ */
+
+/* block: "olenka/floating-box" */
+.wp-block-olenka-floating-box {
+    z-index: -1;
+}
+
+/*
+ * Animated Section Vertical.
+ */
+.is-style-animation-pointer {
+    position: relative;
+}
+
+.is-style-animation-pointer>* {
+    position: absolute;
+}
+
+.is-style-animation-descriptor:not(.active-nav) p {
+    display: none;
+}
+
+.is-style-animation-descriptor {
+    opacity: .5;
+}
+
+.is-style-animation-descriptor.active-nav {
+    opacity: 1;
+}
+
+/*
+ * Animated Section Horizontal.
+ */
+.wp-block-olenka-animated-section[data-section-type="horizontal"] {
+    display: flex;
+    overflow: hidden;
+    overscroll-behavior: none;
+}
+
+[data-section-type="horizontal"] .mx-animated-horizontal-slider {
+    display: flex;
+    flex-wrap: nowrap;
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
+    width: fit-content;
+    will-change: transform;
+}
+
+[data-section-type="horizontal"] .mx-animated-horizontal-slider>* {
+    width: 100vw;
+}
+
+/*
+ * Modal Window.
+ */
+.mx-modal-window {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow-y: scroll;
+    z-index: 10;
+}
+
+.mx-modal-window .wp-block-olenka-floating-box {
+    z-index: 1;
+}
