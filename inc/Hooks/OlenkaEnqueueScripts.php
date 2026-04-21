@@ -123,6 +123,24 @@ class OlenkaEnqueueScripts
             OLENKA_THEME_VERSION,
             true
         );
+
+        /**
+         * Aggregated block stylesheet — produced by Vite from every per-block
+         * `src/blocks/<name>/style.{scss,css}` via the glob import in
+         * `src/blocks/index.js`. Loaded on both the site frontend and inside
+         * the block editor so block visuals match in either context.
+         */
+        $blocksStylesFile = '/dist/blocks/index.css';
+        $blocksStylesPath = get_stylesheet_directory() . $blocksStylesFile;
+
+        if (file_exists($blocksStylesPath)) {
+            wp_enqueue_style(
+                'olenka-blocks-style',
+                get_stylesheet_directory_uri() . $blocksStylesFile,
+                [],
+                filemtime($blocksStylesPath)
+            );
+        }
     }
 
     /**
@@ -167,18 +185,7 @@ class OlenkaEnqueueScripts
             );
         }
 
-        // Block Editor Styles.
-        $blocksStylesFile = '/dist/blocks/style.css';
-        $blocksStylesPath = get_stylesheet_directory() . $blocksStylesFile;
-
-        // Only enqueue if the file exists to avoid filemtime() warnings
-        if (file_exists($blocksStylesPath)) {
-            wp_enqueue_style(
-                'olenka-blocks-style',
-                get_stylesheet_directory_uri() . $blocksStylesFile,
-                [],
-                filemtime($blocksStylesPath)
-            );
-        }
+        // Block editor styles are enqueued in `editorFrontendAssets()` so the
+        // same aggregated stylesheet loads on the site frontend too.
     }
 }
