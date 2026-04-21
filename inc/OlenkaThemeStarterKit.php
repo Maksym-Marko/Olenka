@@ -1,4 +1,4 @@
-<?php 
+<?php
 
 /**
  * The Olenka Theme Starter Kit class.
@@ -9,6 +9,7 @@
 namespace OLENKA;
 
 use OLENKA\Hooks\OlenkaEnqueueScripts;
+use OLENKA\Hooks\OlenkaGutenbergBlocks;
 
 class OlenkaThemeStarterKit
 {
@@ -19,5 +20,10 @@ class OlenkaThemeStarterKit
          * Initialize the Olenka Enqueue Scripts.
          */
         new OlenkaEnqueueScripts();
+
+        /**
+         * Initialize the Olenka Gutenberg Blocks.
+         */
+        new OlenkaGutenbergBlocks();
     }
 }
