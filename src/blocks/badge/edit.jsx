@@ -2,7 +2,6 @@ import { __ } from '@wordpress/i18n';
 import metadata from './block.json';
 import { useBlockProps, RichText, InspectorControls, PanelColorSettings } from '@wordpress/block-editor';
 import { TextControl } from '@wordpress/components';
-import './editor.scss';
 
 export default function edit({ attributes, setAttributes }) {
 	const { text, blockBackgroundColor, squareBackgroundColor, textColor } = attributes;

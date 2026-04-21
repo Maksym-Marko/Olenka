@@ -42,6 +42,5 @@
 			"default": "#000000"
 		}
 	},
-	"textdomain": "olenka",
-	"editorStyle": "file:./editor.scss"	
+	"textdomain": "olenka"
 }

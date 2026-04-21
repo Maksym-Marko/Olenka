@@ -185,7 +185,20 @@ class OlenkaEnqueueScripts
             );
         }
 
-        // Block editor styles are enqueued in `editorFrontendAssets()` so the
-        // same aggregated stylesheet loads on the site frontend too.
+        // Block editor-only styles — aggregated stylesheet produced by Vite
+        // from every per-block `src/blocks/<name>/editor.{scss,css}` via the
+        // virtual SCSS entry `blocks/editor` in `vite.config.js`. The shared
+        // frontend + editor stylesheet is enqueued in `editorFrontendAssets()`.
+        $blocksEditorStylesFile = '/dist/blocks/editor.css';
+        $blocksEditorStylesPath = get_stylesheet_directory() . $blocksEditorStylesFile;
+
+        if (file_exists($blocksEditorStylesPath)) {
+            wp_enqueue_style(
+                'olenka-blocks-editor-style',
+                get_stylesheet_directory_uri() . $blocksEditorStylesFile,
+                [],
+                filemtime($blocksEditorStylesPath)
+            );
+        }
     }
 }
