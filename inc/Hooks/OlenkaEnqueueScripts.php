@@ -33,23 +33,33 @@ class OlenkaEnqueueScripts
         /**
          *  Frontend Styles.
          * */
-        wp_enqueue_style(
-            'olenka-frontend-style',
-            get_template_directory_uri() . '/dist/frontend.css',
-            array(),
-            OLENKA_THEME_VERSION
-        );
+        $frontendStyleFile = '/dist/frontend.css';
+        $frontendStylePath = get_stylesheet_directory() . $frontendStyleFile;
+
+        if (file_exists($frontendStylePath)) {
+            wp_enqueue_style(
+                'olenka-frontend-style',
+                get_stylesheet_directory_uri() . $frontendStyleFile,
+                [],
+                filemtime($frontendStylePath)
+            );
+        }
 
         /**
          *  Frontend Scripts.
          * */
-        wp_enqueue_script(
-            'olenka-frontend-script',
-            get_template_directory_uri() . '/dist/frontend.js',
-            array('jquery'),
-            OLENKA_THEME_VERSION,
-            true
-        );
+        $frontendScriptFile = '/dist/frontend.js';
+        $frontendScriptPath = get_stylesheet_directory() . $frontendScriptFile;
+
+        if (file_exists($frontendScriptPath)) {
+            wp_enqueue_script(
+                'olenka-frontend-script',
+                get_stylesheet_directory_uri() . $frontendScriptFile,
+                ['jquery'],
+                filemtime($frontendScriptPath),
+                true
+            );
+        }
     }
 
     /**
@@ -66,22 +76,32 @@ class OlenkaEnqueueScripts
             /**
              * Editor Styles.
              * */
-            wp_enqueue_style(
-                'olenka-editor-style',
-                get_template_directory_uri() . '/dist/editor.css',
-                array(),
-                OLENKA_THEME_VERSION
-            );
+            $editorStyleFile = '/dist/editor.css';
+            $editorStylePath = get_stylesheet_directory() . $editorStyleFile;
+
+            if (file_exists($editorStylePath)) {
+                wp_enqueue_style(
+                    'olenka-editor-style',
+                    get_stylesheet_directory_uri() . $editorStyleFile,
+                    [],
+                    filemtime($editorStylePath)
+                );
+            }
 
             /**
              * Editor Scripts.
              * */
-            wp_enqueue_script(
-                'olenka-editor-script',
-                get_template_directory_uri() . '/dist/editor.js',
-                array('wp-blocks'),
-                OLENKA_THEME_VERSION
-            );
+            $editorScriptFile = '/dist/editor.js';
+            $editorScriptPath = get_stylesheet_directory() . $editorScriptFile;
+
+            if (file_exists($editorScriptPath)) {
+                wp_enqueue_script(
+                    'olenka-editor-script',
+                    get_stylesheet_directory_uri() . $editorScriptFile,
+                    ['wp-blocks'],
+                    filemtime($editorScriptPath)
+                );
+            }
         }
     }
 
@@ -96,40 +116,52 @@ class OlenkaEnqueueScripts
         /**
          * TailwindCSS — shared by the frontend and the block editor.
          * */
-        wp_enqueue_style(
-            'olenka-tailwind',
-            get_template_directory_uri() . '/dist/style.css',
-            array(),
-            OLENKA_THEME_VERSION
-        );
+        $tailwindFile = '/dist/style.css';
+        $tailwindPath = get_stylesheet_directory() . $tailwindFile;
+
+        if (file_exists($tailwindPath)) {
+            wp_enqueue_style(
+                'olenka-tailwind',
+                get_stylesheet_directory_uri() . $tailwindFile,
+                [],
+                filemtime($tailwindPath)
+            );
+        }
 
         /**
          * Editor/Frontend Styles.
          * */
-        wp_enqueue_style(
-            'olenka-editor-frontend-style',
-            get_template_directory_uri() . '/dist/frontend-editor.css',
-            array(),
-            OLENKA_THEME_VERSION
-        );
+        $editorFrontendStyleFile = '/dist/frontend-editor.css';
+        $editorFrontendStylePath = get_stylesheet_directory() . $editorFrontendStyleFile;
+
+        if (file_exists($editorFrontendStylePath)) {
+            wp_enqueue_style(
+                'olenka-editor-frontend-style',
+                get_stylesheet_directory_uri() . $editorFrontendStyleFile,
+                [],
+                filemtime($editorFrontendStylePath)
+            );
+        }
 
         /**
          * Editor/Frontend Scripts.
          * */
-        wp_enqueue_script(
-            'olenka-editor-frontend-script',
-            get_template_directory_uri() . '/dist/frontend-editor.js',
-            array('jquery'),
-            OLENKA_THEME_VERSION,
-            true
-        );
+        $editorFrontendScriptFile = '/dist/frontend-editor.js';
+        $editorFrontendScriptPath = get_stylesheet_directory() . $editorFrontendScriptFile;
+
+        if (file_exists($editorFrontendScriptPath)) {
+            wp_enqueue_script(
+                'olenka-editor-frontend-script',
+                get_stylesheet_directory_uri() . $editorFrontendScriptFile,
+                ['jquery'],
+                filemtime($editorFrontendScriptPath),
+                true
+            );
+        }
 
         /**
-         * Aggregated block stylesheet — produced by Vite from every per-block
-         * `src/blocks/<name>/style.{scss,css}` via the glob import in
-         * `src/blocks/index.js`. Loaded on both the site frontend and inside
-         * the block editor so block visuals match in either context.
-         */
+         * Aggregated block stylesheet.
+         * */
         $blocksStylesFile = '/dist/blocks/index.css';
         $blocksStylesPath = get_stylesheet_directory() . $blocksStylesFile;
 
@@ -151,21 +183,15 @@ class OlenkaEnqueueScripts
     public function blockEditorAssets()
     {
 
-        // Block Editor Scripts.
+        /**
+         * Block Editor Scripts.
+         * */
         $blocksFile  = '/dist/blocks/index.js';
         $blocksPath  = get_stylesheet_directory() . $blocksFile;
         $blocksDeps  = get_stylesheet_directory() . '/dist/blocks/index.deps.json';
 
         if (file_exists($blocksPath)) {
-            /**
-             * Vite rewrites bare `@wordpress/*` (and React) imports into
-             * references to the `wp.*` / React globals at build time, so the
-             * bundle is a classic script — NOT an ES module — that just
-             * needs the matching WordPress script handles to be loaded
-             * first. The handle list is written by the Vite build to
-             * `dist/blocks/index.deps.json` and read here so the two stay
-             * in sync automatically.
-             */
+
             $deps = [];
 
             if (file_exists($blocksDeps)) {
@@ -185,10 +211,9 @@ class OlenkaEnqueueScripts
             );
         }
 
-        // Block editor-only styles — aggregated stylesheet produced by Vite
-        // from every per-block `src/blocks/<name>/editor.{scss,css}` via the
-        // virtual SCSS entry `blocks/editor` in `vite.config.js`. The shared
-        // frontend + editor stylesheet is enqueued in `editorFrontendAssets()`.
+        /**
+         * Block editor-only styles.
+         * */
         $blocksEditorStylesFile = '/dist/blocks/editor.css';
         $blocksEditorStylesPath = get_stylesheet_directory() . $blocksEditorStylesFile;
 

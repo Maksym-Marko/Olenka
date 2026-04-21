@@ -1,21 +1,24 @@
 /**
  * Button.
  */
+
+if (typeof jQuery !== 'undefined') {
+    $ = jQuery;
+}
+
 export const olenkaButton = window.olenkaButton || {
 
-    buttonElements: '.olenka-button',
+    buttonElements: '.olenka-button a',
 
     bindEvents: function () {
-        const buttonElements = document.querySelectorAll(this.buttonElements);
-        buttonElements.forEach(function (el, i) {
-            el.addEventListener('click', function () {
-                console.log('click');
-            });
+        $(this.buttonElements).on('click', function () {
+            console.log('click');
         });
     },
 
     init: function () {
-
-        this.bindEvents();
+        if (typeof jQuery !== 'undefined') {
+            this.bindEvents();
+        }
     }
 };

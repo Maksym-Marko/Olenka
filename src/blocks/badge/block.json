@@ -27,7 +27,7 @@
 		},
 		"text": {
 			"type": "string",
-			"default": "The Cloudbeds Advantage"
+			"default": "Hello World!"
 		},
 		"blockBackgroundColor": {
 			"type": "string",
