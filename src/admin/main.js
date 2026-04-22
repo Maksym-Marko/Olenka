@@ -12,6 +12,6 @@ import './assets/css/admin.css'
 ; (function ($) {
     $(function () {
 
-        console.log('admin.js loaded');
+        // console.log('admin.js loaded');
     });
 })(jQuery);

@@ -19,7 +19,7 @@ class EnqueueScripts
 
         add_action('enqueue_block_assets', [$this, 'editorFrontendAssets']);
 
-        add_action('enqueue_block_editor_assets', [$this, 'blockEditorAssets']);
+        add_action('enqueue_block_assets', [$this, 'blockEditorAssets']);
 
         add_action('admin_enqueue_scripts', [$this, 'adminAssets']);
     }
