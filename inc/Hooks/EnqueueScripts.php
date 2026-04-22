@@ -8,7 +8,7 @@
 
 namespace OLENKA\Hooks;
 
-class OlenkaEnqueueScripts
+class EnqueueScripts
 {
     public function __construct()
     {

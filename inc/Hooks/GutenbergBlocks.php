@@ -8,7 +8,7 @@
 
 namespace OLENKA\Hooks;
 
-class OlenkaGutenbergBlocks
+class GutenbergBlocks
 {
     public function __construct()
     {

@@ -8,8 +8,8 @@
 
 namespace OLENKA;
 
-use OLENKA\Hooks\OlenkaEnqueueScripts;
-use OLENKA\Hooks\OlenkaGutenbergBlocks;
+use OLENKA\Hooks\EnqueueScripts;
+use OLENKA\Hooks\GutenbergBlocks;
 
 class OlenkaThemeStarterKit
 {
@@ -19,11 +19,11 @@ class OlenkaThemeStarterKit
         /**
          * Initialize the Olenka Enqueue Scripts.
          */
-        new OlenkaEnqueueScripts();
+        new EnqueueScripts();
 
         /**
          * Initialize the Olenka Gutenberg Blocks.
          */
-        new OlenkaGutenbergBlocks();
+        new GutenbergBlocks();
     }
 }

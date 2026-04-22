@@ -110,7 +110,7 @@ printf(
 <!-- wp:group {"style":{"spacing":{"blockGap":"var:preset|spacing|medium"}},"layout":{"type":"flex","flexWrap":"nowrap"},"fontSize":"small"} -->
 <div class="wp-block-group has-small-font-size"><!-- wp:buttons -->
 <div class="wp-block-buttons"><!-- wp:button {"textColor":"light","style":{"spacing":{"padding":{"top":"var:preset|spacing|mini","bottom":"var:preset|spacing|mini","left":"var:preset|spacing|large","right":"var:preset|spacing|large"}}},"className":"is-style-outline","fontSize":"x-small"} -->
-<div class="wp-block-button has-custom-font-size is-style-outline has-x-small-font-size"><a class="wp-block-button__link has-light-color has-text-color wp-element-button" href="https://olenka-theme.com.ua/" style="padding-top:var(--wp--preset--spacing--mini);padding-right:var(--wp--preset--spacing--large);padding-bottom:var(--wp--preset--spacing--mini);padding-left:var(--wp--preset--spacing--large)"><?php echo __( 'Download', 'olenka' ); ?></a></div>
+<div class="wp-block-button has-custom-font-size is-style-outline has-x-small-font-size"><a class="wp-block-button__link has-light-color has-text-color wp-element-button" href="https://olenka-theme.local/" style="padding-top:var(--wp--preset--spacing--mini);padding-right:var(--wp--preset--spacing--large);padding-bottom:var(--wp--preset--spacing--mini);padding-left:var(--wp--preset--spacing--large)"><?php echo __( 'Download', 'olenka' ); ?></a></div>
 <!-- /wp:button --></div>
 <!-- /wp:buttons --></div>
 <!-- /wp:group --></div>

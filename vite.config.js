@@ -108,21 +108,21 @@ const wpExternal = [
 ]
 
 const wpGlobals = {
-  '@wordpress/blocks':       'wp.blocks',
+  '@wordpress/blocks': 'wp.blocks',
   '@wordpress/block-editor': 'wp.blockEditor',
-  '@wordpress/components':   'wp.components',
-  '@wordpress/element':      'wp.element',
-  '@wordpress/i18n':         'wp.i18n',
-  '@wordpress/data':         'wp.data',
-  '@wordpress/hooks':        'wp.hooks',
-  '@wordpress/api-fetch':    'wp.apiFetch',
-  '@wordpress/dom-ready':    'wp.domReady',
-  '@wordpress/compose':      'wp.compose',
-  '@wordpress/primitives':   'wp.primitives',
-  jquery:                    'jQuery',
-  react:                     'React',
-  'react-dom':               'ReactDOM',
-  'react/jsx-runtime':       'ReactJSXRuntime',
+  '@wordpress/components': 'wp.components',
+  '@wordpress/element': 'wp.element',
+  '@wordpress/i18n': 'wp.i18n',
+  '@wordpress/data': 'wp.data',
+  '@wordpress/hooks': 'wp.hooks',
+  '@wordpress/api-fetch': 'wp.apiFetch',
+  '@wordpress/dom-ready': 'wp.domReady',
+  '@wordpress/compose': 'wp.compose',
+  '@wordpress/primitives': 'wp.primitives',
+  jquery: 'jQuery',
+  react: 'React',
+  'react-dom': 'ReactDOM',
+  'react/jsx-runtime': 'ReactJSXRuntime',
 }
 
 /**
@@ -132,20 +132,20 @@ const wpGlobals = {
  * blocks bundle executes in the editor.
  */
 const wpScriptHandles = {
-  '@wordpress/blocks':       'wp-blocks',
+  '@wordpress/blocks': 'wp-blocks',
   '@wordpress/block-editor': 'wp-block-editor',
-  '@wordpress/components':   'wp-components',
-  '@wordpress/element':      'wp-element',
-  '@wordpress/i18n':         'wp-i18n',
-  '@wordpress/data':         'wp-data',
-  '@wordpress/hooks':        'wp-hooks',
-  '@wordpress/api-fetch':    'wp-api-fetch',
-  '@wordpress/dom-ready':    'wp-dom-ready',
-  '@wordpress/compose':      'wp-compose',
-  '@wordpress/primitives':   'wp-primitives',
-  react:                     'react',
-  'react-dom':               'react-dom',
-  'react/jsx-runtime':       'react-jsx-runtime',
+  '@wordpress/components': 'wp-components',
+  '@wordpress/element': 'wp-element',
+  '@wordpress/i18n': 'wp-i18n',
+  '@wordpress/data': 'wp-data',
+  '@wordpress/hooks': 'wp-hooks',
+  '@wordpress/api-fetch': 'wp-api-fetch',
+  '@wordpress/dom-ready': 'wp-dom-ready',
+  '@wordpress/compose': 'wp-compose',
+  '@wordpress/primitives': 'wp-primitives',
+  react: 'react',
+  'react-dom': 'react-dom',
+  'react/jsx-runtime': 'react-jsx-runtime',
 }
 
 /**
@@ -294,20 +294,20 @@ export default defineConfig({
     rollupOptions: {
       input: {
         // Independent JS bundles.
-        frontend:          resolve(SRC, 'frontend/main.js'),
+        frontend: resolve(SRC, 'frontend/main.js'),
         'frontend-editor': resolve(SRC, 'frontend-editor/main.js'),
-        editor:            resolve(SRC, 'editor/main.js'),
+        editor: resolve(SRC, 'editor/main.js'),
 
         // Standalone Tailwind stylesheet -> dist/style.css
-        style:             resolve(SRC, 'style.css'),
+        style: resolve(SRC, 'style.css'),
 
         // Aggregated block registrations -> dist/blocks/index.js (+ index.css
         // containing every per-block `style.{scss,css}`, shared frontend + editor).
-        'blocks/index':    resolve(BLOCKS_SRC, 'index.js'),
+        'blocks/index': resolve(BLOCKS_SRC, 'index.js'),
 
         // Aggregated editor-only stylesheet -> dist/blocks/editor.css
         // (virtual SCSS module, see `blocksEditorAggregator`).
-        'blocks/editor':   BLOCKS_EDITOR_VIRTUAL_ID,
+        'blocks/editor': BLOCKS_EDITOR_VIRTUAL_ID,
 
         // Per-block stylesheets -> dist/blocks/<name>/view.css
         ...discoverBlockEntries(),
