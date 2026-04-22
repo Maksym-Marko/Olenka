@@ -374,31 +374,6 @@
 					}
 				}
 			},
-			"core/heading": {
-				"color": {
-					"text": "var:preset|color|dark"
-				},
-				"elements": {
-					"heading": {
-						"color": {
-							"text": "var:preset|color|dark"
-						}
-					},
-					"link": {
-						":hover": {
-							"color": {
-								"text": "var:preset|color|main-dark"
-							}
-						},
-						"color": {
-							"text": "var:preset|color|main"
-						}
-					}
-				},
-				"typography": {
-					"fontFamily": "var:preset|font-family|roboto"
-				}
-			},
 			"core/list": {
 				"typography": {
 					"fontFamily": "var:preset|font-family|roboto"
@@ -435,31 +410,6 @@
 							}
 						}
 					}
-				}
-			},
-			"core/paragraph": {
-				"color": {
-					"text": "var:preset|color|dark"
-				},
-				"elements": {
-					"heading": {
-						"color": {
-							"text": "var:preset|color|dark"
-						}
-					},
-					"link": {
-						":hover": {
-							"typography": {
-								"textDecoration": "none"
-							}
-						},
-						"color": {
-							"text": "var:preset|color|main"
-						}
-					}
-				},
-				"typography": {
-					"fontSize": "var:preset|font-size|xx-small"
 				}
 			},
 			"core/preformatted": {
@@ -564,41 +514,6 @@
 					"background": "var:preset|color|main",
 					"text": "var:preset|color|white"
 				},
-				"typography": {
-					"fontFamily": "var:preset|font-family|roboto"
-				}
-			},
-			"h1": {
-				"typography": {
-					"fontSize": "var:preset|font-size|large"
-				}
-			},
-			"h2": {
-				"typography": {
-					"fontSize": "var:preset|font-size|medium"
-				}
-			},
-			"h3": {
-				"typography": {
-					"fontSize": "var:preset|font-size|small"
-				}
-			},
-			"h4": {
-				"typography": {
-					"fontSize": "var:preset|font-size|x-small"
-				}
-			},
-			"h5": {
-				"typography": {
-					"fontSize": "var:preset|font-size|xx-small"
-				}
-			},
-			"h6": {
-				"typography": {
-					"fontSize": "var:preset|font-size|xxx-small"
-				}
-			},
-			"heading": {
 				"typography": {
 					"fontFamily": "var:preset|font-family|roboto"
 				}

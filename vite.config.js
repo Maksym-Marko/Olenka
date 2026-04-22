@@ -11,6 +11,7 @@ import {
   writeFileSync,
   mkdirSync,
   renameSync,
+  copyFileSync,
 } from 'node:fs'
 
 const __dirname = dirname(fileURLToPath(import.meta.url))
@@ -54,9 +55,14 @@ function discoverBlockEntries() {
 }
 
 /**
- * Copies each src/blocks/<name>/block.json into dist/blocks/<name>/block.json
- * and rewrites any `file:./*.scss` references to `file:./*.css` so WordPress
- * picks up the compiled stylesheets.
+ * For each `src/blocks/<name>/` source folder:
+ *
+ *   - Copies `block.json` into `dist/blocks/<name>/block.json`, rewriting any
+ *     `file:./*.scss` references to `file:./*.css` so WordPress picks up the
+ *     compiled stylesheets.
+ *   - Copies every top-level `*.php` file (e.g. `render.php`) verbatim into
+ *     the same dist folder, so `register_block_type_from_metadata()` can
+ *     resolve `"render": "file:./render.php"` relative to the dist manifest.
  */
 function copyBlockManifests() {
   return {
@@ -67,7 +73,8 @@ function copyBlockManifests() {
 
       for (const dirent of readdirSync(BLOCKS_SRC, { withFileTypes: true })) {
         if (!dirent.isDirectory()) continue
-        const from = resolve(BLOCKS_SRC, dirent.name, 'block.json')
+        const blockDir = resolve(BLOCKS_SRC, dirent.name)
+        const from = resolve(blockDir, 'block.json')
         if (!existsSync(from)) continue
 
         const manifest = JSON.parse(readFileSync(from, 'utf8'))
@@ -90,6 +97,17 @@ function copyBlockManifests() {
           resolve(destDir, 'block.json'),
           JSON.stringify(manifest, null, 2) + '\n'
         )
+
+        // Copy any PHP files the block ships with (render.php, helpers, etc.)
+        // so `file:./*.php` references in block.json resolve correctly against
+        // the dist manifest location.
+        for (const file of readdirSync(blockDir, { withFileTypes: true })) {
+          if (!file.isFile() || !file.name.endsWith('.php')) continue
+          copyFileSync(
+            resolve(blockDir, file.name),
+            resolve(destDir, file.name)
+          )
+        }
       }
     },
   }
@@ -119,6 +137,7 @@ const wpGlobals = {
   '@wordpress/dom-ready': 'wp.domReady',
   '@wordpress/compose': 'wp.compose',
   '@wordpress/primitives': 'wp.primitives',
+  '@wordpress/server-side-render': 'wp.serverSideRender',
   jquery: 'jQuery',
   react: 'React',
   'react-dom': 'ReactDOM',
@@ -143,6 +162,7 @@ const wpScriptHandles = {
   '@wordpress/dom-ready': 'wp-dom-ready',
   '@wordpress/compose': 'wp-compose',
   '@wordpress/primitives': 'wp-primitives',
+  '@wordpress/server-side-render': 'wp-server-side-render',
   react: 'react',
   'react-dom': 'react-dom',
   'react/jsx-runtime': 'react-jsx-runtime',

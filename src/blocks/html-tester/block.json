@@ -1,0 +1,14 @@
+{
+  "apiVersion": 3,
+  "name": "olenka/html-tester",
+  "title": "HTML Tester",
+  "keywords": ["html", "tester"],
+  "category": "olenka-general",
+  "icon": "layout",
+  "description": "A HTML tester",
+  "supports": {
+    "html": false
+  },
+  "attributes": {},
+  "render": "file:./render.php"
+}
