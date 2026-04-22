@@ -20,6 +20,8 @@ class EnqueueScripts
         add_action('enqueue_block_assets', [$this, 'editorFrontendAssets']);
 
         add_action('enqueue_block_editor_assets', [$this, 'blockEditorAssets']);
+
+        add_action('admin_enqueue_scripts', [$this, 'adminAssets']);
     }
 
     /**
@@ -223,6 +225,45 @@ class EnqueueScripts
                 get_stylesheet_directory_uri() . $blocksEditorStylesFile,
                 [],
                 filemtime($blocksEditorStylesPath)
+            );
+        }
+    }
+
+    /**
+     * Enqueue scripts and styles for the WordPress admin area.
+     *
+     * @return void
+     */
+    public function adminAssets()
+    {
+        /**
+         * Admin Styles.
+         * */
+        $adminStyleFile = '/dist/admin.css';
+        $adminStylePath = get_stylesheet_directory() . $adminStyleFile;
+
+        if (file_exists($adminStylePath)) {
+            wp_enqueue_style(
+                'olenka-admin-style',
+                get_stylesheet_directory_uri() . $adminStyleFile,
+                [],
+                filemtime($adminStylePath)
+            );
+        }
+
+        /**
+         * Admin Scripts.
+         * */
+        $adminScriptFile = '/dist/admin.js';
+        $adminScriptPath = get_stylesheet_directory() . $adminScriptFile;
+
+        if (file_exists($adminScriptPath)) {
+            wp_enqueue_script(
+                'olenka-admin-script',
+                get_stylesheet_directory_uri() . $adminScriptFile,
+                ['jquery'],
+                filemtime($adminScriptPath),
+                true
             );
         }
     }

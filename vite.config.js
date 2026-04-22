@@ -297,6 +297,7 @@ export default defineConfig({
         frontend: resolve(SRC, 'frontend/main.js'),
         'frontend-editor': resolve(SRC, 'frontend-editor/main.js'),
         editor: resolve(SRC, 'editor/main.js'),
+        admin: resolve(SRC, 'admin/main.js'),
 
         // Standalone Tailwind stylesheet -> dist/style.css
         style: resolve(SRC, 'style.css'),
