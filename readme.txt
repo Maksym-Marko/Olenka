@@ -9,14 +9,23 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
 == Description ==
 
-Introducing Olenka: Your Ultimate WordPress Block Theme starter kit.
-...
+Olenka Theme Starter Kit is a developer-focused boilerplate for building modern WordPress block themes.
+
+It includes a clean setup with Composer, Vite, and a structured foundation of templates, template parts, and patterns. The starter kit also provides examples of both static and SSR Gutenberg blocks to support flexible development workflows.
+
+Built for developers who want a fast, minimal, and scalable starting point for custom block themes.
 
 == Installation ==
 
-1. Add this theme to the themes/ folder.
-2. Open Olenka theme and run "composer install".
-3. Got to admin, themes page. Click on the 'Activate' button to use your new theme right away.
+1. Add the theme to the /wp-content/themes/ directory.
+2. In the theme root, run:
+   - `composer install`
+   - `npm install`
+3. For development, run:
+   - `npm run dev`
+4. For production build, run:
+   - `npm run build`
+5. Activate the theme in the WordPress admin.
 
 == Changelog ==
 
@@ -25,18 +34,13 @@ Introducing Olenka: Your Ultimate WordPress Block Theme starter kit.
 
 == Copyright ==
 
-Olenka WordPress Theme, (C) 2023-2024 Maksym Marko
-Olenka is distributed under the terms of the GNU GPL.
+Olenka WordPress Block Theme, (C) 2026 Maksym Marko  
+Licensed under the GNU GPL.
 
 This program is free software: you can redistribute it and/or modify
-it under the terms of the GNU General Public License as published by
-the Free Software Foundation, either version 2 of the License, or
-(at your option) any later version.
+it under the terms of the GNU General Public License.
 
-This program is distributed in the hope that it will be useful,
-but WITHOUT ANY WARRANTY; without even the implied warranty of
-MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
-GNU General Public License for more details.
+This program is distributed without any warranty.
 
 Roboto Font
 Copyright 2011 Google Inc. All Rights Reserved. 
