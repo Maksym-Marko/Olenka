@@ -122,7 +122,7 @@ class EnqueueScripts
         $tailwindPath = get_stylesheet_directory() . $tailwindFile;
 
         if (file_exists($tailwindPath)) {
-            
+
             wp_enqueue_style(
                 'olenka-tailwind',
                 get_stylesheet_directory_uri() . $tailwindFile,

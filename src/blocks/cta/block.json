@@ -1,0 +1,44 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "olenka/cta",
+	"version": "1.0.0",
+	"title": "CTA Section",
+	"category": "olenka-general",
+	"icon": "megaphone",
+	"description": "Call-to-action section with heading, description, and buttons",
+	"supports": {
+		"html": false
+	},
+	"attributes": {
+		"heading": {
+			"type": "string",
+			"default": "Start with a clean base"
+		},
+		"description": {
+			"type": "string",
+			"default": "Olenka is a minimal, developer-focused starter for building modern WordPress block themes with clarity, structure, and room to grow."
+		},
+		"primaryButtonText": {
+			"type": "string",
+			"default": "Open Olenka on GitHub"
+		},
+		"primaryButtonUrl": {
+			"type": "string",
+			"default": "https://github.com"
+		},
+		"secondaryLinkText": {
+			"type": "string",
+			"default": "↑ Back to top"
+		},
+		"secondaryLinkUrl": {
+			"type": "string",
+			"default": "#"
+		},
+		"backgroundColor": {
+			"type": "string",
+			"default": ""
+		}
+	},
+	"textdomain": "olenka"
+}

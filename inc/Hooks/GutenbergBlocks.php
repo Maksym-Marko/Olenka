@@ -16,6 +16,8 @@ class GutenbergBlocks
         add_action('init', [$this, 'registerBlocks']);
 
         add_filter('block_categories_all', [$this, 'registerBlockCategories'], 10);
+
+        add_filter('block_type_metadata', [$this, 'setAboutBlockDefaults']);
     }
 
     /**
@@ -35,6 +37,24 @@ class GutenbergBlocks
         foreach (glob($blocksDir . '/*/block.json') as $blockJson) {
             register_block_type_from_metadata(dirname($blockJson));
         }
+    }
+
+    /**
+     * Set dynamic defaults for the about block that depend on the theme URL.
+     *
+     * @param array $metadata Block metadata.
+     * @return array
+     */
+    public function setAboutBlockDefaults(array $metadata): array
+    {
+        if (($metadata['name'] ?? '') !== 'olenka/about') {
+            return $metadata;
+        }
+
+        $metadata['attributes']['imageUrl']['default'] =
+            get_stylesheet_directory_uri() . '/assets/images/maksym-marko.png';
+
+        return $metadata;
     }
 
     /**

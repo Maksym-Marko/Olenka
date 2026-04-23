@@ -65,7 +65,7 @@ const TEMPLATE = [
 ];
 
 export default function edit({ attributes, setAttributes }) {
-	const { tagline, heading, description, backgroundColor, subline, displaySubline } = attributes;
+	const { tagline, heading, description, backgroundColor, subline, displaySubline, showBorderBottom } = attributes;
 
 	const blockProps = useBlockProps({
 		style: backgroundColor ? { backgroundColor } : {},
@@ -101,6 +101,12 @@ export default function edit({ attributes, setAttributes }) {
 					/>
 					<ToggleControl
 						__nextHasNoMarginBottom
+						label={__('Show Border Bottom', metadata.textdomain)}
+						checked={showBorderBottom}
+						onChange={(val) => setAttributes({ showBorderBottom: val })}
+					/>
+					<ToggleControl
+						__nextHasNoMarginBottom
 						label={__('Display Subline', metadata.textdomain)}
 						checked={displaySubline}
 						onChange={(val) => setAttributes({ displaySubline: val })}
@@ -131,7 +137,7 @@ export default function edit({ attributes, setAttributes }) {
 			</InspectorControls>
 
 			<div {...blockProps}>
-				<div id="features" className="py-20 md:py-24 border-b border-coffee-02">
+				<div id="features" className={`py-20 md:py-24${showBorderBottom ? ' border-b border-coffee-02' : ''}`}>
 					<div className="max-w-5xl mx-auto px-6">
 						<div className="mb-12">
 							<RichText

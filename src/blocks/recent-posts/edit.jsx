@@ -69,6 +69,8 @@ export default function Edit({ attributes, setAttributes }) {
             onChange={(value) => setAttributes({ postType: value })}
           />
           <RangeControl
+            __next40pxDefaultSize
+            __nextHasNoMarginBottom
             label={__('Number of Posts', 'olenka')}
             value={numberOfPosts}
             onChange={(value) => setAttributes({ numberOfPosts: value })}

@@ -62,27 +62,27 @@
 			],
 			"palette": [
 				{
-					"color": "#52e6a5",
+					"color": "#EFE3D6",
 					"name": "Bright",
 					"slug": "bright"
 				},
 				{
-					"color": "#433abf",
+					"color": "#A95F33",
 					"name": "Main Dark",
 					"slug": "main-dark"
 				},
 				{
-					"color": "#f5f5f5",
+					"color": "#F2F2F0",
 					"name": "Main Light",
 					"slug": "main-light"
 				},
 				{
-					"color": "#4c40d4",
+					"color": "#C97A45",
 					"name": "Main",
 					"slug": "main"
 				},
 				{
-					"color": "#222a35",
+					"color": "#3E2E27",
 					"name": "Dark",
 					"slug": "dark"
 				},

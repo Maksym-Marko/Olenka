@@ -166,6 +166,8 @@ export default function edit({ attributes, setAttributes }) {
 							</div>
 
 							<RangeControl
+								__next40pxDefaultSize
+								__nextHasNoMarginBottom
 								label={__('Image Background Opacity', metadata.textdomain)}
 								value={imageBackgroundOpacity}
 								onChange={value => setAttributes({ imageBackgroundOpacity: value })}
