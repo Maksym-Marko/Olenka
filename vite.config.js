@@ -272,6 +272,44 @@ function blocksEditorAggregator() {
 }
 
 /**
+ * Wraps every JS chunk in an IIFE so minified local variable names (like `_`,
+ * `$`, `e`, `t`, …) never leak into the global scope. Without this, the
+ * minifier can choose `_` for a local variable and silently overwrite
+ * WordPress's global Underscore.js, causing `_.isArray is not a function` in
+ * wp-backbone / media-views.
+ */
+function wrapChunksInIife() {
+  return {
+    name: 'olenka:wrap-iife',
+    apply: 'build',
+    generateBundle(_options, bundle) {
+      for (const chunk of Object.values(bundle)) {
+        if (chunk.type !== 'chunk') continue
+
+        // The sourcemap comment (`//# sourceMappingURL=...`) must stay on its
+        // own line AFTER the IIFE closer. If we naively appended `})();`
+        // to `chunk.code`, it would land on the same line as the `//` comment
+        // and get swallowed by it, leaving the IIFE unterminated
+        // ("Unexpected end of input" at runtime). So we split the trailing
+        // sourcemap comment off, close the IIFE, then re-append the comment.
+        let body = chunk.code
+        let trailer = ''
+        const sourceMapRe = /\n?\/\/# sourceMappingURL=[^\n]*\n?$/
+        const match = body.match(sourceMapRe)
+        if (match) {
+          body = body.slice(0, match.index)
+          trailer = match[0].startsWith('\n') ? match[0] : `\n${match[0]}`
+          if (!trailer.endsWith('\n')) trailer += '\n'
+        }
+
+        if (!body.endsWith('\n')) body += '\n'
+        chunk.code = `;(function(){\n${body}})();${trailer || '\n'}`
+      }
+    },
+  }
+}
+
+/**
  * Write the WordPress script-handle dependency list for the blocks bundle
  * to `dist/blocks/index.deps.json` so PHP can read it at enqueue time and
  * keep the handle list in sync with what Vite actually marked as external.
@@ -302,6 +340,7 @@ export default defineConfig({
     emitBlocksDepsManifest(),
     blocksEditorAggregator(),
     relocateBlocksCss(),
+    wrapChunksInIife(),
   ],
 
   build: {

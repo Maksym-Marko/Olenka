@@ -73,18 +73,24 @@ export default function edit({ attributes, setAttributes }) {
 			<InspectorControls>
 				<PanelBody title={__('Section Settings', metadata.textdomain)}>
 					<TextControl
+						__next40pxDefaultSize
+						__nextHasNoMarginBottom
 						label={__('Tagline', metadata.textdomain)}
 						value={tagline}
 						onChange={(value) => setAttributes({ tagline: value })}
 						placeholder={__('What\'s inside', metadata.textdomain)}
 					/>
 					<TextControl
+						__next40pxDefaultSize
+						__nextHasNoMarginBottom
 						label={__('Heading', metadata.textdomain)}
 						value={heading}
 						onChange={(value) => setAttributes({ heading: value })}
 						placeholder={__('Enter heading…', metadata.textdomain)}
 					/>
 					<TextControl
+						__next40pxDefaultSize
+						__nextHasNoMarginBottom
 						label={__('Description', metadata.textdomain)}
 						value={description}
 						onChange={(value) => setAttributes({ description: value })}

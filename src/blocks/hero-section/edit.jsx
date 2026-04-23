@@ -156,6 +156,8 @@ export default function edit({ attributes, setAttributes }) {
 
 							<div className="mb-4">
 								<TextControl
+									__next40pxDefaultSize
+									__nextHasNoMarginBottom
 									label={__('Image Alt Text', metadata.textdomain)}
 									value={imageAlt}
 									onChange={value => setAttributes({ imageAlt: value })}
