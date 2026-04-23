@@ -123,37 +123,37 @@
 			"spacingSizes": [
 				{
 					"name": "Mini",
-					"size": "clamp(0.313rem, 1vw, 0.625rem)",
+					"size": "clamp(0.594rem, 1vw, 0.625rem)",
 					"slug": "mini"
 				},
 				{
 					"name": "Small",
-					"size": "clamp(.625rem, 1.5vw, 1.25rem)",
+					"size": "clamp(1.188rem, 1.5vw, 1.25rem)",
 					"slug": "small"
 				},
 				{
 					"name": "Medium",
-					"size": "clamp(1.25rem, 2vw, 1.875rem)",
+					"size": "clamp(1.781rem, 2vw, 1.875rem)",
 					"slug": "medium"
 				},
 				{
 					"name": "Large",
-					"size": "clamp(1.875rem, 3vw, 3.125rem)",
+					"size": "clamp(2.969rem, 3vw, 3.125rem)",
 					"slug": "large"
 				},
 				{
 					"name": "X-Large",
-					"size": "clamp(3.125rem, 4vw, 5rem)",
+					"size": "clamp(4.75rem, 4vw, 5rem)",
 					"slug": "x-large"
 				},
 				{
 					"name": "2x-Large",
-					"size": "clamp(5rem, 7vw, 7.5rem)",
+					"size": "clamp(7.125rem, 7vw, 7.5rem)",
 					"slug": "xx-large"
 				},
 				{
 					"name": "Huge",
-					"size": "clamp(7.5rem, 10.5vw, 12.9rem)",
+					"size": "clamp(12.255rem, 10.5vw, 12.9rem)",
 					"slug": "huge"
 				}
 			],
@@ -260,7 +260,7 @@
 				{
 					"fluid": {
 						"max": ".75rem",
-						"min": ".65rem"
+						"min": "0.69rem"
 					},
 					"name": "Mini",
 					"size": ".75rem",
@@ -269,7 +269,7 @@
 				{
 					"fluid": {
 						"max": ".875rem",
-						"min": ".765rem"
+						"min": "0.805rem"
 					},
 					"name": "3x-Small",
 					"size": ".875rem",
@@ -278,7 +278,7 @@
 				{
 					"fluid": {
 						"max": "1.063rem",
-						"min": "1.0rem"
+						"min": "0.978rem"
 					},
 					"name": "2x-Small",
 					"size": "1.063rem",
@@ -287,7 +287,7 @@
 				{
 					"fluid": {
 						"max": "1.25rem",
-						"min": "1.14rem"
+						"min": "1.15rem"
 					},
 					"name": "X-Small",
 					"size": "1.25rem",
@@ -296,7 +296,7 @@
 				{
 					"fluid": {
 						"max": "1.563rem",
-						"min": "1.363rem"
+						"min": "1.438rem"
 					},
 					"name": "Small",
 					"size": "1.563rem",
@@ -305,7 +305,7 @@
 				{
 					"fluid": {
 						"max": "1.938rem",
-						"min": "1.738rem"
+						"min": "1.783rem"
 					},
 					"name": "Medium",
 					"size": "1.938rem",
@@ -323,7 +323,7 @@
 				{
 					"fluid": {
 						"max": "3.125rem",
-						"min": "2.901rem"
+						"min": "2.875rem"
 					},
 					"name": "X-Large",
 					"size": "3.125rem",
@@ -332,7 +332,7 @@
 				{
 					"fluid": {
 						"max": "4.563rem",
-						"min": "4.163rem"
+						"min": "4.198rem"
 					},
 					"name": "2x-Large",
 					"size": "4.563rem",
@@ -341,7 +341,7 @@
 				{
 					"fluid": {
 						"max": "7.5rem",
-						"min": "6.4rem"
+						"min": "6.9rem"
 					},
 					"name": "3x-Large",
 					"size": "7.5rem",
@@ -350,7 +350,7 @@
 				{
 					"fluid": {
 						"max": "10.625rem",
-						"min": "8.925rem"
+						"min": "9.775rem"
 					},
 					"name": "Huge",
 					"size": "10.625rem",

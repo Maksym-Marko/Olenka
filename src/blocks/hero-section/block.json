@@ -1,0 +1,32 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "olenka/hero-section",
+	"version": "1.0.0",
+	"title": "Hero Section",
+	"category": "olenka-general",
+	"icon": "cover-image",
+	"description": "Hero section with image and inner blocks",
+	"supports": {
+		"html": false
+	},
+	"attributes": {
+		"imageUrl": {
+			"type": "string",
+			"default": ""
+		},
+		"imageId": {
+			"type": "number",
+			"default": 0
+		},
+		"imageAlt": {
+			"type": "string",
+			"default": ""
+		},
+		"imageBackgroundOpacity": {
+			"type": "number",
+			"default": 1
+		}
+	},
+	"textdomain": "olenka"
+}

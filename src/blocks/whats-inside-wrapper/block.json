@@ -1,0 +1,28 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "olenka/whats-inside-wrapper",
+	"version": "1.0.0",
+	"title": "What's Inside Wrapper",
+	"category": "olenka-general",
+	"icon": "grid-view",
+	"description": "What's inside section with tagline, heading, description and inner blocks grid",
+	"supports": {
+		"html": false
+	},
+	"attributes": {
+		"tagline": {
+			"type": "string",
+			"default": "What's inside"
+		},
+		"heading": {
+			"type": "string",
+			"default": "A practical starter, built around modern WordPress workflow"
+		},
+		"description": {
+			"type": "string",
+			"default": "Olenka is designed as a clean working base for custom theme development. Instead of filling the homepage with decoration, it focuses on the pieces that matter most when starting a real project."
+		}
+	},
+	"textdomain": "olenka"
+}

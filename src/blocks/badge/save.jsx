@@ -23,7 +23,7 @@ export default function save({ attributes }) {
 	return (
 		<div 
 			{...blockProps}
-			className={`p-2 inline-flex items-center text-base ${blockProps.className}`}
+			className={`p-2 inline-flex items-center text-xs ${blockProps.className}`}
 			style={containerStyle}
 		>
 			<span 
@@ -31,7 +31,7 @@ export default function save({ attributes }) {
 				style={squareStyle}
 			></span>
 			<span 
-				className="text-base"
+				className="text-xs"
 				style={textStyle}
 			>
 				<RichText.Content

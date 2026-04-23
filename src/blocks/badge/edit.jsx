@@ -61,7 +61,7 @@ export default function edit({ attributes, setAttributes }) {
 
 			<div 
 				{...blockProps}
-				className={`p-2 inline-flex items-center text-base ${blockProps.className}`}
+				className={`p-2 inline-flex items-center text-xs ${blockProps.className}`}
 				style={containerStyle}
 			>
 				<span 
@@ -69,7 +69,7 @@ export default function edit({ attributes, setAttributes }) {
 					style={squareStyle}
 				></span>
 				<span 
-					className="text-base"
+					className="text-xs"
 					style={textStyle}
 				>
 					<RichText

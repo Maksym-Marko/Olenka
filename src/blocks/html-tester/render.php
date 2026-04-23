@@ -1,67 +1,44 @@
 <?php
 // Exit if accessed directly for security
 if (! defined('ABSPATH')) {
-    exit;
+  exit;
 }
 
 ?>
-<header class="relative overflow-hidden bg-[#f3ece6]">
-  <div class="mx-auto grid min-h-[720px] max-w-[1440px] grid-cols-1 items-center px-6 py-16 md:px-10 lg:grid-cols-2 lg:px-16 xl:px-20">
-    
-    <!-- Left content -->
-    <div class="relative z-10 max-w-[560px]">
-      <p class="text-[64px] leading-[0.95] tracking-[-0.03em] text-[#232323] sm:text-[84px] lg:text-[110px]">
-        Olenka 1
-      </p>
-
-      <h1 class="mt-4 font-stix text-[28px] leading-[1.05] text-[#b97b49] sm:text-[42px] lg:text-[64px]">
-        Theme Starter Kit
-      </h1>
-
-      <div class="mt-8 h-[3px] w-16 bg-[#b97b49]"></div>
-
-      <p class="mt-8 max-w-[340px] font-host text-[22px] leading-[1.45] text-[#2b2b2b] sm:text-[26px]">
-        boilerplate for your best WordPress theme.
+<div id="features" class="py-20 md:py-24 border-b border-coffee-02">
+  <div class="max-w-5xl mx-auto px-6">
+    <div class="mb-12">
+      <span class="inline-block text-xs font-medium tracking-widest uppercase text-coffee-03 mb-4">What's inside</span>
+      <h2 class="text-2xl md:text-3xl font-semibold leading-tight text-coffee-06 mb-4 max-w-xl">A practical starter, built around modern WordPress workflow</h2>
+      <p class="text-coffee-05 leading-relaxed max-w-2xl">
+        Olenka is designed as a clean working base for custom theme development. Instead of filling the homepage with decoration, it focuses on the pieces that matter most when starting a real project.
       </p>
     </div>
-
-    <!-- Right artwork -->
-    <div class="relative mt-16 min-h-[500px] lg:mt-0">
-      <!-- Large beige circle -->
-      <div class="absolute right-[-80px] top-[-40px] h-[520px] w-[520px] rounded-full bg-[#eadfd4] sm:right-0 sm:h-[620px] sm:w-[620px]"></div>
-
-      <!-- Orange half circle -->
-      <div class="absolute bottom-0 right-[-80px] h-[360px] w-[360px] rounded-tl-full bg-[#c9733d] sm:right-0 sm:h-[430px] sm:w-[430px]"></div>
-
-      <!-- Pedestal -->
-      <div class="absolute bottom-0 left-1/2 h-[120px] w-[320px] -translate-x-1/2 rounded-t-[6px] bg-[#efe2d4] shadow-[0_-8px_30px_rgba(0,0,0,0.04)] sm:w-[380px]"></div>
-
-      <!-- Vase -->
-      <div class="absolute bottom-[84px] left-1/2 z-10 -translate-x-1/2">
-        <div class="relative mx-auto h-[260px] w-[180px]">
-          <!-- neck -->
-          <div class="absolute left-1/2 top-0 h-[92px] w-[52px] -translate-x-1/2 rounded-t-[18px] bg-[#dcc1aa]"></div>
-          <!-- body -->
-          <div class="absolute bottom-0 left-1/2 h-[190px] w-[180px] -translate-x-1/2 rounded-full bg-[#e2c8b1] shadow-[0_18px_30px_rgba(130,90,60,0.12)]"></div>
-        </div>
-
-        <!-- Stems -->
-        <div class="pointer-events-none absolute left-1/2 top-[-140px] h-[150px] w-[140px] -translate-x-1/2">
-          <span class="absolute left-[68px] top-[28px] block h-[120px] w-[1.5px] rotate-[-8deg] bg-[#6e4a37]"></span>
-          <span class="absolute left-[70px] top-[18px] block h-[124px] w-[1.5px] rotate-[18deg] bg-[#6e4a37]"></span>
-          <span class="absolute left-[72px] top-[8px] block h-[132px] w-[1.5px] rotate-[34deg] bg-[#6e4a37]"></span>
-          <span class="absolute left-[66px] top-[20px] block h-[124px] w-[1.5px] rotate-[-28deg] bg-[#6e4a37]"></span>
-          <span class="absolute left-[70px] top-[30px] block h-[110px] w-[1.5px] rotate-[48deg] bg-[#6e4a37]"></span>
-
-          <!-- flower heads -->
-          <span class="absolute left-[26px] top-[6px] h-4 w-4 rounded-full bg-[#dcc7a8] blur-[0.5px]"></span>
-          <span class="absolute left-[42px] top-[22px] h-3.5 w-3.5 rounded-full bg-[#e1cfb3]"></span>
-          <span class="absolute left-[78px] top-[0px] h-4 w-4 rounded-full bg-[#dcc7a8]"></span>
-          <span class="absolute left-[102px] top-[18px] h-4 w-4 rounded-full bg-[#e6d5bb]"></span>
-          <span class="absolute left-[116px] top-[44px] h-3.5 w-3.5 rounded-full bg-[#dcc7a8]"></span>
-          <span class="absolute left-[88px] top-[50px] h-3.5 w-3.5 rounded-full bg-[#e1cfb3]"></span>
-        </div>
-      </div>
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+      <article class="bg-coffee-01 rounded-xl p-7">
+        <h3 class="text-sm font-semibold text-coffee-06 mb-3">Block theme architecture</h3>
+        <p class="text-sm text-coffee-05 leading-relaxed">Built for the modern WordPress site editor, with a structure that supports templates, template parts, patterns, and global styles.</p>
+      </article>
+      <article class="bg-coffee-01 rounded-xl p-7">
+        <h3 class="text-sm font-semibold text-coffee-06 mb-3">Tailwind CSS workflow</h3>
+        <p class="text-sm text-coffee-05 leading-relaxed">Uses Tailwind CSS for a fast, utility-first styling approach without relying on a large custom stylesheet.</p>
+      </article>
+      <article class="bg-coffee-01 rounded-xl p-7">
+        <h3 class="text-sm font-semibold text-coffee-06 mb-3">Vite-powered assets</h3>
+        <p class="text-sm text-coffee-05 leading-relaxed">Frontend, editor, admin, and block assets are compiled through Vite for a modern and efficient development workflow.</p>
+      </article>
+      <article class="bg-coffee-01 rounded-xl p-7">
+        <h3 class="text-sm font-semibold text-coffee-06 mb-3">Composer autoloading</h3>
+        <p class="text-sm text-coffee-05 leading-relaxed">PHP is organized with PSR-4 autoloading under the OLENKA namespace, making the codebase easier to extend and maintain.</p>
+      </article>
+      <article class="bg-coffee-01 rounded-xl p-7">
+        <h3 class="text-sm font-semibold text-coffee-06 mb-3">Custom Gutenberg blocks</h3>
+        <p class="text-sm text-coffee-05 leading-relaxed">Includes support for custom blocks, including static and server-rendered patterns, so the theme can grow with project needs.</p>
+      </article>
+      <article class="bg-coffee-01 rounded-xl p-7">
+        <h3 class="text-sm font-semibold text-coffee-06 mb-3">Templates and patterns</h3>
+        <p class="text-sm text-coffee-05 leading-relaxed">Comes with a structured set of templates, template parts, and block patterns for building pages and post layouts more efficiently.</p>
+      </article>
     </div>
   </div>
-</header>
+</div>

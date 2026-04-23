@@ -122,15 +122,11 @@ class EnqueueScripts
         $tailwindPath = get_stylesheet_directory() . $tailwindFile;
 
         if (file_exists($tailwindPath)) {
-            // Depend on `global-styles` so Tailwind utilities are printed
-            // AFTER WordPress's theme.json-generated inline global styles
-            // (`:root :where(p) { … }`, etc.). Without this dependency the
-            // global styles end up later in the cascade and, at equal
-            // specificity, defeat Tailwind utilities like `text-[64px]`.
+            
             wp_enqueue_style(
                 'olenka-tailwind',
                 get_stylesheet_directory_uri() . $tailwindFile,
-                ['global-styles'],
+                [],
                 filemtime($tailwindPath)
             );
         }
