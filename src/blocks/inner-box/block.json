@@ -1,13 +1,13 @@
 {
 	"$schema": "https://schemas.wp.org/trunk/block.json",
 	"apiVersion": 3,
-	"name": "olenka/whats-inside-item",
+	"name": "olenka/inner-box",
 	"version": "1.0.0",
-	"title": "What's Inside Item",
+	"title": "Inner Box",
 	"category": "olenka-general",
 	"icon": "index-card",
 	"description": "A single feature card with a heading and description",
-	"parent": ["olenka/whats-inside-wrapper"],
+	"parent": ["olenka/text-with-boxes-wrapper"],
 	"supports": {
 		"html": false
 	},

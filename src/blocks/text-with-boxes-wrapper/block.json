@@ -1,12 +1,12 @@
 {
 	"$schema": "https://schemas.wp.org/trunk/block.json",
 	"apiVersion": 3,
-	"name": "olenka/whats-inside-wrapper",
+	"name": "olenka/text-with-boxes-wrapper",
 	"version": "1.0.0",
-	"title": "What's Inside Wrapper",
+	"title": "Text with Boxes Wrapper",
 	"category": "olenka-general",
 	"icon": "grid-view",
-	"description": "What's inside section with tagline, heading, description and inner blocks grid",
+	"description": "Text with boxes section with tagline, heading, description and inner boxes grid",
 	"supports": {
 		"html": false
 	},
@@ -22,6 +22,18 @@
 		"description": {
 			"type": "string",
 			"default": "Olenka is designed as a clean working base for custom theme development. Instead of filling the homepage with decoration, it focuses on the pieces that matter most when starting a real project."
+		},
+		"backgroundColor": {
+			"type": "string",
+			"default": ""
+		},
+		"subline": {
+			"type": "string",
+			"default": "Made for developers who prefer a modern workflow with room for clean customization."
+		},
+		"displaySubline": {
+			"type": "boolean",
+			"default": false
 		}
 	},
 	"textdomain": "olenka"

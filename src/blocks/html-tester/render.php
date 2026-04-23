@@ -5,40 +5,32 @@ if (! defined('ABSPATH')) {
 }
 
 ?>
-<div id="features" class="py-20 md:py-24 border-b border-coffee-02">
+<section id="about" class="py-20 md:py-24 border-b border-coffee-02">
   <div class="max-w-5xl mx-auto px-6">
-    <div class="mb-12">
-      <span class="inline-block text-xs font-medium tracking-widest uppercase text-coffee-03 mb-4">What's inside</span>
-      <h2 class="text-2xl md:text-3xl font-semibold leading-tight text-coffee-06 mb-4 max-w-xl">A practical starter, built around modern WordPress workflow</h2>
-      <p class="text-coffee-05 leading-relaxed max-w-2xl">
-        Olenka is designed as a clean working base for custom theme development. Instead of filling the homepage with decoration, it focuses on the pieces that matter most when starting a real project.
-      </p>
-    </div>
-    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-      <article class="bg-coffee-01 rounded-xl p-7">
-        <h3 class="text-sm font-semibold text-coffee-06 mb-3">Block theme architecture</h3>
-        <p class="text-sm text-coffee-05 leading-relaxed">Built for the modern WordPress site editor, with a structure that supports templates, template parts, patterns, and global styles.</p>
-      </article>
-      <article class="bg-coffee-01 rounded-xl p-7">
-        <h3 class="text-sm font-semibold text-coffee-06 mb-3">Tailwind CSS workflow</h3>
-        <p class="text-sm text-coffee-05 leading-relaxed">Uses Tailwind CSS for a fast, utility-first styling approach without relying on a large custom stylesheet.</p>
-      </article>
-      <article class="bg-coffee-01 rounded-xl p-7">
-        <h3 class="text-sm font-semibold text-coffee-06 mb-3">Vite-powered assets</h3>
-        <p class="text-sm text-coffee-05 leading-relaxed">Frontend, editor, admin, and block assets are compiled through Vite for a modern and efficient development workflow.</p>
-      </article>
-      <article class="bg-coffee-01 rounded-xl p-7">
-        <h3 class="text-sm font-semibold text-coffee-06 mb-3">Composer autoloading</h3>
-        <p class="text-sm text-coffee-05 leading-relaxed">PHP is organized with PSR-4 autoloading under the OLENKA namespace, making the codebase easier to extend and maintain.</p>
-      </article>
-      <article class="bg-coffee-01 rounded-xl p-7">
-        <h3 class="text-sm font-semibold text-coffee-06 mb-3">Custom Gutenberg blocks</h3>
-        <p class="text-sm text-coffee-05 leading-relaxed">Includes support for custom blocks, including static and server-rendered patterns, so the theme can grow with project needs.</p>
-      </article>
-      <article class="bg-coffee-01 rounded-xl p-7">
-        <h3 class="text-sm font-semibold text-coffee-06 mb-3">Templates and patterns</h3>
-        <p class="text-sm text-coffee-05 leading-relaxed">Comes with a structured set of templates, template parts, and block patterns for building pages and post layouts more efficiently.</p>
-      </article>
+    <div class="flex flex-col md:flex-row gap-8 md:gap-10">
+      <div class="flex-shrink-0 flex flex-col items-start gap-2 md:pt-10">
+        <div class="w-[160px] aspect-[4/5] bg-coffee-02 rounded-lg"></div>
+        <p class="text-xs text-coffee-05/60 w-[160px] leading-relaxed">Developer photo placeholder — 160 × 200 px</p>
+      </div>
+      <div class="min-w-0 max-w-xl">
+        <span class="inline-block text-xs font-medium tracking-widest uppercase text-coffee-03 mb-4">About the developer</span>
+        <h2 class="text-2xl md:text-3xl font-semibold leading-tight text-coffee-06 mb-6">Built by Maksym Marko</h2>
+        <p class="text-coffee-05 leading-relaxed mb-6">
+          Hi, I'm Maksym — a web developer helping businesses build and improve their online presence since 2015. I work with WordPress, PHP, Vue.js, Laravel, HTML, CSS, and front-end systems that support real project needs.
+        </p>
+        <p class="text-coffee-05 leading-relaxed mb-6">
+          Olenka brings together the parts of modern WordPress development I find most useful: a clean starting point, structured templates, pattern-based building, modern asset tooling, and enough flexibility to shape a theme around content instead of forcing content into a rigid design.
+        </p>
+        <p class="text-coffee-05 leading-relaxed mb-8">
+          Over the years, I've worked with clients from different countries and across different kinds of projects. Olenka reflects that practical experience: less noise, more structure, and a reliable foundation you can keep building on.
+        </p>
+        <ul class="space-y-3 mb-8 border-l-2 border-coffee-02 pl-5">
+          <li class="text-sm text-coffee-05 leading-relaxed">Building websites and web applications since 2015</li>
+          <li class="text-sm text-coffee-05 leading-relaxed">Focused on WordPress and practical development workflow</li>
+          <li class="text-sm text-coffee-05 leading-relaxed">Designed as a reliable starting point for custom projects</li>
+        </ul>
+        <a href="https://github.com" class="inline-block border border-coffee-02 hover:border-coffee-03 text-coffee-06 hover:text-coffee-03 text-sm font-medium px-5 py-2.5 rounded transition-colors duration-150">Visit GitHub</a>
+      </div>
     </div>
   </div>
-</div>
+</section>

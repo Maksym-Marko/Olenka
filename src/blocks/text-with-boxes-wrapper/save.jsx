@@ -1,9 +1,11 @@
 import { useBlockProps, InnerBlocks, RichText } from '@wordpress/block-editor';
 
 export default function save({ attributes }) {
-	const { tagline, heading, description } = attributes;
+	const { tagline, heading, description, backgroundColor, subline, displaySubline } = attributes;
 
-	const blockProps = useBlockProps.save();
+	const blockProps = useBlockProps.save({
+		style: backgroundColor ? { backgroundColor } : {},
+	});
 
 	return (
 		<div {...blockProps}>
@@ -32,6 +34,10 @@ export default function save({ attributes }) {
 					<div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
 						<InnerBlocks.Content />
 					</div>
+
+					{displaySubline && (
+						<p className="text-sm text-coffee-05 mt-8">{subline}</p>
+					)}
 				</div>
 			</div>
 		</div>

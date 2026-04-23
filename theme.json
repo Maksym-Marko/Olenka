@@ -1,7 +1,7 @@
 {
 	"$schema": "https://schemas.wp.org/trunk/theme.json",
 	"version": 3,
-	"customTemplates": [ 
+	"customTemplates": [
 		{
 			"name": "blog-grid",
 			"postTypes": [
@@ -252,7 +252,7 @@
 							]
 						}
 					],
-					"fontFamily": "ImperialScript Regular", 
+					"fontFamily": "ImperialScript Regular",
 					"slug": "imperialscript-regular"
 				}
 			],
@@ -481,7 +481,7 @@
 				"elements": {
 					"link": {
 						":hover": {
-							"typography": {								
+							"typography": {
 								"textDecoration": "none"
 							}
 						}
@@ -504,6 +504,11 @@
 			"text": "var:preset|color|black"
 		},
 		"elements": {
+			"link": {
+				"typography": {
+					"textDecoration": "none"
+				}
+			},
 			"button": {
 				":hover": {
 					"color": {
@@ -513,14 +518,6 @@
 				"color": {
 					"background": "var:preset|color|main",
 					"text": "var:preset|color|white"
-				},
-				"typography": {
-					"fontFamily": "var:preset|font-family|roboto"
-				}
-			},
-			"link": {
-				"color": {
-					"text": "var:preset|color|main"
 				},
 				"typography": {
 					"fontFamily": "var:preset|font-family|roboto"

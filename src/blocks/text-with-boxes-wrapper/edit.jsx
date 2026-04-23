@@ -4,17 +4,18 @@ import {
 	InnerBlocks,
 	RichText,
 	InspectorControls,
+	PanelColorSettings,
 } from '@wordpress/block-editor';
-import { PanelBody, TextControl } from '@wordpress/components';
+import { PanelBody, TextControl, ToggleControl } from '@wordpress/components';
 import metadata from './block.json';
 
 const ALLOWED_BLOCKS = [
-	'olenka/whats-inside-item'
+	'olenka/inner-box'
 ];
 
 const TEMPLATE = [
 	[
-		'olenka/whats-inside-item',
+		'olenka/inner-box',
 		{
 			heading: 'Block theme architecture',
 			description:
@@ -22,7 +23,7 @@ const TEMPLATE = [
 		},
 	],
 	[
-		'olenka/whats-inside-item',
+		'olenka/inner-box',
 		{
 			heading: 'Tailwind CSS workflow',
 			description:
@@ -30,7 +31,7 @@ const TEMPLATE = [
 		},
 	],
 	[
-		'olenka/whats-inside-item',
+		'olenka/inner-box',
 		{
 			heading: 'Vite-powered assets',
 			description:
@@ -38,7 +39,7 @@ const TEMPLATE = [
 		},
 	],
 	[
-		'olenka/whats-inside-item',
+		'olenka/inner-box',
 		{
 			heading: 'Composer autoloading',
 			description:
@@ -46,7 +47,7 @@ const TEMPLATE = [
 		},
 	],
 	[
-		'olenka/whats-inside-item',
+		'olenka/inner-box',
 		{
 			heading: 'Custom Gutenberg blocks',
 			description:
@@ -54,7 +55,7 @@ const TEMPLATE = [
 		},
 	],
 	[
-		'olenka/whats-inside-item',
+		'olenka/inner-box',
 		{
 			heading: 'Templates and patterns',
 			description:
@@ -64,9 +65,11 @@ const TEMPLATE = [
 ];
 
 export default function edit({ attributes, setAttributes }) {
-	const { tagline, heading, description } = attributes;
+	const { tagline, heading, description, backgroundColor, subline, displaySubline } = attributes;
 
-	const blockProps = useBlockProps();
+	const blockProps = useBlockProps({
+		style: backgroundColor ? { backgroundColor } : {},
+	});
 
 	return (
 		<>
@@ -96,7 +99,35 @@ export default function edit({ attributes, setAttributes }) {
 						onChange={(value) => setAttributes({ description: value })}
 						placeholder={__('Enter description…', metadata.textdomain)}
 					/>
+					<ToggleControl
+						__nextHasNoMarginBottom
+						label={__('Display Subline', metadata.textdomain)}
+						checked={displaySubline}
+						onChange={(val) => setAttributes({ displaySubline: val })}
+						help={__('Toggle to display the subline below the boxes grid.', metadata.textdomain)}
+					/>
+					{displaySubline && (
+						<TextControl
+							__next40pxDefaultSize
+							__nextHasNoMarginBottom
+							label={__('Subline', metadata.textdomain)}
+							value={subline}
+							onChange={(value) => setAttributes({ subline: value })}
+							placeholder={__('Enter subline…', metadata.textdomain)}
+						/>
+					)}
 				</PanelBody>
+			<PanelColorSettings
+				title={__('Color Settings', metadata.textdomain)}
+				initialOpen={false}
+				colorSettings={[
+					{
+						value: backgroundColor,
+						onChange: (color) => setAttributes({ backgroundColor: color }),
+						label: __('Background Color', metadata.textdomain),
+					},
+				]}
+			/>
 			</InspectorControls>
 
 			<div {...blockProps}>
@@ -131,7 +162,7 @@ export default function edit({ attributes, setAttributes }) {
 							/>
 						</div>
 
-						<div className="olenka-whats-inside-items-editor">
+						<div className="olenka-inner-boxs-editor">
 							<InnerBlocks
 								allowedBlocks={ALLOWED_BLOCKS}
 								template={TEMPLATE}
@@ -139,6 +170,10 @@ export default function edit({ attributes, setAttributes }) {
 								orientation="horizontal"
 							/>
 						</div>
+
+						{displaySubline && (
+							<p className="text-sm text-coffee-05 mt-8">{subline}</p>
+						)}
 					</div>
 				</div>
 			</div>

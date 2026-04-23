@@ -1,0 +1,49 @@
+{
+  "apiVersion": 3,
+  "name": "olenka/recent-posts",
+  "title": "Recent Posts",
+  "category": "olenka-general",
+  "icon": "welcome-widgets-menus",
+  "description": "A recent posts section",
+  "supports": {
+    "html": false
+  },
+  "attributes": {
+    "postType": {
+      "type": "string",
+      "default": "post"
+    },
+    "numberOfPosts": {
+      "type": "number",
+      "default": 3
+    },
+    "sectionLabel": {
+      "type": "string",
+      "default": "From the blog"
+    },
+    "heading": {
+      "type": "string",
+      "default": "Latest posts"
+    },
+    "description": {
+      "type": "string",
+      "default": "Olenka is also designed to feel natural as a real content-driven site. The blog section helps show how articles, updates, and writing can live within the same visual system."
+    },
+    "viewAllText": {
+      "type": "string",
+      "default": "View all posts \u2192"
+    },
+    "viewAllUrl": {
+      "type": "string",
+      "default": "#"
+    },
+    "backgroundColor": {
+      "type": "string",
+      "default": ""
+    }
+  },
+  "editorScript": "file:./dist/js/blocks.js",
+  "style": "file:./style.css",
+  "render": "file:./render.php",
+  "keywords": ["articles", "posts", "blog"]
+}
