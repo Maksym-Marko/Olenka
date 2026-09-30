@@ -189,6 +189,7 @@ olenka/
 │   │   ├── EnqueueScripts.php
 │   │   └── GutenbergBlocks.php
 │   └── OlenkaThemeStarterKit.php
+├── mockups/                  # Design references (HTML/images) for page/block implementation
 ├── parts/
 │   ├── footer.html
 │   └── header.html

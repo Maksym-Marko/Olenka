@@ -205,6 +205,33 @@ There are no lint/test scripts and no Composer scripts defined in this repo. Do 
 - **Preserve backward compatibility** (attributes, block markup, template/part slugs) unless the task intentionally changes them; changing a static block's `save` output without deprecation invalidates existing content.
 - **Escape output in PHP** (`esc_html`, `esc_attr`, `esc_url`, `wp_kses_post`) and guard `render.php` with `if (! defined('ABSPATH')) exit;`, matching `recent-posts/render.php`.
 
+## Design Mockups
+
+The `mockups/` directory contains design references that may be used to create or modify Olenka pages and Gutenberg blocks.
+
+Mockups may be provided as:
+
+- PNG/JPG images;
+- HTML files;
+- other design reference files.
+
+Files under `mockups/` are reference material only. They are not production theme files and should not be used directly as frontend output.
+
+When a task asks to implement a design from `mockups/`:
+
+- inspect the supplied mockup before making changes;
+- identify the logical sections and reusable components in the design;
+- inspect existing blocks under `src/blocks/` before creating new ones;
+- reuse or extend existing blocks where appropriate;
+- create new Gutenberg blocks only when the design requires components that are not already represented well by existing blocks;
+- follow the existing Olenka Gutenberg architecture and conventions documented in this file;
+- make content that reasonably needs to be changed by a WordPress editor editable through appropriate Gutenberg functionality rather than hardcoding it;
+- treat the mockup as the visual/design reference while treating the existing Olenka codebase as the implementation architecture.
+
+Do not assume that every visual element requires its own Gutenberg block. Block boundaries should represent meaningful, maintainable, and reusable content components.
+
+Detailed implementation steps, page-specific requirements, and validation criteria will be provided in the task prompt when a mockup is implemented.
+
 ## Adding a Gutenberg Block
 
 1. Create `src/blocks/<name>/` (kebab-case; block name `olenka/<name>`).
