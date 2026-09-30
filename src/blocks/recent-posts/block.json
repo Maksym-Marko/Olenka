@@ -1,12 +1,15 @@
 {
+  "$schema": "https://schemas.wp.org/trunk/block.json",
   "apiVersion": 3,
   "name": "olenka/recent-posts",
+  "version": "1.0.0",
   "title": "Recent Posts",
   "category": "olenka-general",
   "icon": "welcome-widgets-menus",
   "description": "A recent posts section",
   "supports": {
-    "html": false
+    "html": false,
+    "anchor": true
   },
   "attributes": {
     "postType": {
@@ -42,8 +45,7 @@
       "default": ""
     }
   },
-  "editorScript": "file:./dist/js/blocks.js",
-  "style": "file:./style.css",
   "render": "file:./render.php",
-  "keywords": ["articles", "posts", "blog"]
+  "keywords": ["articles", "posts", "blog"],
+  "textdomain": "olenka"
 }

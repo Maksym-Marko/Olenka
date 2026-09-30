@@ -11,6 +11,7 @@ $description     = $attributes['description']   ?? '';
 $view_all_text   = $attributes['viewAllText']   ?? 'View all posts &rarr;';
 $view_all_url    = $attributes['viewAllUrl']    ?? '#';
 $background_color = $attributes['backgroundColor'] ?? '';
+$anchor           = $attributes['anchor']          ?? '';
 
 $posts = get_posts([
     'post_type'   => $post_type,
@@ -26,8 +27,12 @@ $section_style = $background_color
     : '';
 
 $section_class = 'py-24 md:py-28 border-b border-coffee-02' . (! $background_color ? ' bg-coffee-01' : '');
+
+$section_id = $anchor
+    ? ' id="' . esc_attr($anchor) . '"'
+    : '';
 ?>
-<div id="blog" class="<?php echo esc_attr($section_class); ?>"<?php echo $section_style; ?>>
+<div<?php echo $section_id; ?> class="<?php echo esc_attr($section_class); ?>"<?php echo $section_style; ?>>
     <div class="max-w-5xl mx-auto px-6">
 
         <div class="mb-12">

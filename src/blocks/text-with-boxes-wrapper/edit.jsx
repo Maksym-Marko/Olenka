@@ -137,7 +137,7 @@ export default function edit({ attributes, setAttributes }) {
 			</InspectorControls>
 
 			<div {...blockProps}>
-				<div id="features" className={`py-20 md:py-24${showBorderBottom ? ' border-b border-coffee-02' : ''}`}>
+				<div className={`py-20 md:py-24${showBorderBottom ? ' border-b border-coffee-02' : ''}`}>
 					<div className="max-w-5xl mx-auto px-6">
 						<div className="mb-12">
 							<RichText

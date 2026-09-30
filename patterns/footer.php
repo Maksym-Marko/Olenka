@@ -20,13 +20,13 @@
 <!-- /wp:paragraph -->
 
 <!-- wp:social-links {"iconColor":"main","iconColorValue":"#4c40d4","iconBackgroundColorValue":"#ffffff","className":"is-style-default","style":{"spacing":{"blockGap":{"top":"var:preset|spacing|medium","left":"var:preset|spacing|medium"},"padding":{"top":"0","right":"0","bottom":"0","left":"0"},"margin":{"top":"var:preset|spacing|large","right":"0","bottom":"0","left":"0"}}},"layout":{"type":"flex","justifyContent":"left","flexWrap":"wrap"}} -->
-<ul class="wp-block-social-links has-icon-color has-icon-background-color is-style-default" style="margin-top:var(--wp--preset--spacing--large);margin-right:0;margin-bottom:0;margin-left:0;padding-top:0;padding-right:0;padding-bottom:0;padding-left:0"><!-- wp:social-link {"url":"https://twitter.com/#","service":"twitter"} /-->
+<ul class="wp-block-social-links has-icon-color has-icon-background-color is-style-default" style="margin-top:var(--wp--preset--spacing--large);margin-right:0;margin-bottom:0;margin-left:0;padding-top:0;padding-right:0;padding-bottom:0;padding-left:0"><!-- wp:social-link {"url":"https://x.com/MaksymMarkoWd","service":"twitter"} /-->
 
 <!-- wp:social-link {"url":"https://instagram.com/#","service":"instagram"} /-->
 
 <!-- wp:social-link {"url":"https://www.linkedin.com/in/maksym-marko/","service":"linkedin"} /-->
 
-<!-- wp:social-link {"url":"https://facebook.com/#","service":"facebook"} /--></ul>
+<!-- wp:social-link {"url":"https://www.facebook.com/profile.php?id=61591402754100","service":"facebook"} /--></ul>
 <!-- /wp:social-links --></div>
 <!-- /wp:column -->
 

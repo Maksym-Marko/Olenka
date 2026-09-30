@@ -10,7 +10,7 @@
  */
 
 ?>
-<!-- wp:olenka/hero-section {"imageUrl":"<?php echo get_template_directory_uri(); ?>/assets/images/vase.jpg","imageId":48} -->
+<!-- wp:olenka/hero-section {"imageUrl":"<?php echo get_template_directory_uri(); ?>/assets/images/vase.jpg","imageId":48,"anchor":"hero"} -->
 <div id="hero" class="wp-block-olenka-hero-section"><div class="py-24 md:py-32 border-b border-coffee-02"><div class="max-w-5xl mx-auto px-6"><div class="flex flex-col md:flex-row md:items-start gap-12 md:gap-20"><div class="flex-1 min-w-0"><!-- wp:olenka/badge {"text":"WORDPRESS BLOCK THEME STARTER KIT","squareBackgroundColor":"#a95f33","textColor":"#c97a45","className":"text-base"} -->
 <div class="p-2 inline-flex items-center text-xs wp-block-olenka-badge text-base has-c-97-a-45-color has-text-color" style="background-color:#ffffff"><span class="inline-block px-2 py-2 rounded mr-1" style="background-color:#a95f33"></span><span class="text-xs" style="color:#c97a45">WORDPRESS BLOCK THEME STARTER KIT</span></div>
 <!-- /wp:olenka/badge -->

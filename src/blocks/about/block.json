@@ -8,7 +8,8 @@
 	"icon": "admin-users",
 	"description": "About section with portrait image and inner blocks",
 	"supports": {
-		"html": false
+		"html": false,
+		"anchor": true
 	},
 	"attributes": {
 		"imageUrl": {

@@ -7,7 +7,7 @@ export default function save({ attributes }) {
 
 	return (
 		<div {...blockProps}>
-			<div id="about" className={`py-20 md:py-24${showBorderBottom ? ' border-b border-coffee-02' : ''}`}>
+			<div className={`py-20 md:py-24${showBorderBottom ? ' border-b border-coffee-02' : ''}`}>
 				<div className="max-w-5xl mx-auto px-6">
 					<div className="flex flex-col md:flex-row gap-8 md:gap-10">
 

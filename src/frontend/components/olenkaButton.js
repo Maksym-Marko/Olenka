@@ -2,9 +2,7 @@
  * Button.
  */
 
-if (typeof jQuery !== 'undefined') {
-    $ = jQuery;
-}
+const $ = typeof jQuery !== 'undefined' ? jQuery : undefined;
 
 export const olenkaButton = window.olenkaButton || {
 
@@ -12,7 +10,7 @@ export const olenkaButton = window.olenkaButton || {
 
     bindEvents: function () {
         $(this.buttonElements).on('click', function () {
-            console.log('click');
+            // Button click handler — add frontend behavior here.
         });
     },
 

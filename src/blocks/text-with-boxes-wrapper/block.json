@@ -8,7 +8,8 @@
 	"icon": "grid-view",
 	"description": "Text with boxes section with tagline, heading, description and inner boxes grid",
 	"supports": {
-		"html": false
+		"html": false,
+		"anchor": true
 	},
 	"attributes": {
 		"tagline": {

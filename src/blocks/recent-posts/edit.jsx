@@ -85,7 +85,7 @@ export default function Edit({ attributes, setAttributes }) {
         </PanelBody>
       </InspectorControls>
 
-      <div id="blog" className={sectionClass} style={sectionStyle}>
+      <div className={sectionClass} style={sectionStyle}>
         <div className="max-w-5xl mx-auto px-6">
           <div className="mb-12">
             <RichText
