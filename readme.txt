@@ -3,7 +3,7 @@ Contributors: markomaksym
 Requires at least: 6.0
 Tested up to: 7.1
 Requires PHP: 8.0
-Stable tag: 1.0.0
+Stable tag: 2.0.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -14,6 +14,8 @@ Olenka Theme Starter Kit is a developer-focused boilerplate for building modern 
 It includes a clean setup with Composer, Vite, and a structured foundation of templates, template parts, and patterns. The starter kit also provides examples of both static and SSR Gutenberg blocks to support flexible development workflows.
 
 Built for developers who want a fast, minimal, and scalable starting point for custom block themes.
+
+Olenka is also optimized for AI-assisted development with Claude Code. It ships with a detailed CLAUDE.md that documents the theme's architecture, conventions, and workflows so Claude Code can safely extend the theme, scaffold new Gutenberg blocks, and follow the established patterns out of the box.
 
 == Installation ==
 
@@ -28,6 +30,12 @@ Built for developers who want a fast, minimal, and scalable starting point for c
 5. Activate the theme in the WordPress admin.
 
 == Changelog ==
+
+= 2.0.0 =
+* Added first-class support for AI-assisted development with Claude Code, including a comprehensive CLAUDE.md describing the theme architecture, block system, and conventions.
+* Tested and updated for compatibility with WordPress 7.1.
+* Expanded the built-in Gutenberg block set (about, cta, hero-section, inner-box, text-with-boxes-wrapper, recent-posts, html-tester) alongside the original badge block.
+* Documentation and developer-experience improvements across README and inline guidance.
 
 = 1.0.0 =
 * Initial release

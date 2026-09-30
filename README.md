@@ -4,9 +4,11 @@
 
 **Olenka** is a developer-focused boilerplate for building modern WordPress block themes. It provides a clean, minimal, and scalable foundation with Composer autoloading, Vite-powered asset compilation, Tailwind CSS, custom Gutenberg blocks, and a structured set of templates, template parts, and block patterns.
 
-**Current Version**: 1.0.0
+**Current Version**: 2.0.0
 
 Fork or download Olenka from [GitHub](https://github.com/Maksym-Marko/Olenka) and start building your next WordPress block theme right away.
+
+> 🤖 **Built for Claude Code.** Olenka ships with a detailed [`CLAUDE.md`](CLAUDE.md) so [Claude Code](https://claude.com/claude-code) understands the theme's architecture, conventions, and build pipeline — letting it scaffold new Gutenberg blocks, wire up hooks, and extend the theme while respecting the established patterns. See [AI-Assisted Development](#-ai-assisted-development-claude-code) below.
 
 ---
 
@@ -16,7 +18,7 @@ Fork or download Olenka from [GitHub](https://github.com/Maksym-Marko/Olenka) an
 
 - PHP 8.0 or higher
 - WordPress 6.0 or higher
-- Node.js 18+ and npm
+- Node.js 20.19+ or 22.12+ and npm (required by Vite 8)
 - Composer (version 2.8.4 or higher)
 
 ### Installation & Setup
@@ -144,6 +146,20 @@ Pre-designed patterns in `patterns/`:
 - `inc/OlenkaThemeStarterKit.php` — main theme bootstrap class
 - `inc/Hooks/EnqueueScripts.php` — all asset enqueueing (frontend, editor, admin, block assets)
 - `inc/Hooks/GutenbergBlocks.php` — block registration
+
+---
+
+## 🤖 AI-Assisted Development (Claude Code)
+
+Olenka is optimized for development with [Claude Code](https://claude.com/claude-code), Anthropic's agentic coding tool.
+
+- **`CLAUDE.md` project guide** — a thorough, always-loaded specification of the theme: project structure, PHP/PSR-4 architecture, the Gutenberg block system, the Vite build pipeline, styling conventions, and strict source-vs-generated rules. Claude Code reads this automatically so its changes match Olenka's conventions.
+- **Safe, convention-following changes** — because the existing code is the specification, Claude Code mirrors the closest existing example when adding blocks, hook classes, patterns, or templates, rather than introducing new architectures.
+- **Block scaffolding** — ask Claude Code to add a Gutenberg block and it follows the documented one-folder-per-block structure (`block.json`, `index.js`, `edit.jsx`, `save.jsx`/`render.php`, `style.scss`/`editor.scss`), which the Vite pipeline auto-discovers.
+- **Guardrails** — `CLAUDE.md` documents which files are generated (`dist/`, `vendor/`, `node_modules/`) and must never be hand-edited, plus verification steps (`npm run build`, `composer dump-autoload`) to run before finishing a change.
+- **"Olenka init"** — a natural-language setup command documented in `CLAUDE.md` that has Claude Code verify Node.js, install Composer/npm dependencies, and run the initial build.
+
+To get started, open the theme directory in Claude Code — it will pick up `CLAUDE.md` automatically.
 
 ---
 
